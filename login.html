@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>logIn</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 100px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container h1 {
+            margin-bottom: 60px;
+        }
+        table {
+            margin-bottom: 30px;
+        }
+        .box {
+            height: 30px;
+            margin-left: 10px;
+        }
+        tr:first-child {
+            font-size: 20px;
+        }
+        #btn {
+            width:60px;
+            height: 80px;
+            margin-left: 10px;
+            background-color:black;
+            color: white;
+            border: 1px dotted white;
+        }
+        .acc {
+            margin-top: 10px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            border: none;
+            text-decoration: underline;
+        }
+        #close {
+            display: block;
+            margin: auto;
+            margin-top: 50px;
+            background-color:black;
+            color: white;
+            border: none;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <table>
+            <tr>
+                <td>ID</td>
+                <td><input type="text" class="box" id="idInput"></td>
+                <td rowspan="2"><input type="button" value="LogIn" id="btn" onclick="LogIn()"></td>
+            </tr>
+            <tr>
+                <td>PW</td>
+                <td><input type="password" class="box" name="" id="pwInput"></td>
+            </tr>
+        </table>
+        <input type="button" class="acc" value="I don't have account" id="createAcc"><br>
+        <input type="button" class="acc" value="I forgot ID/PW" id="findId">
+    </div>
+    <div>
+        <input type="button" value="close" id="close">
+    </div>
+
+    <script>
+        $("#createAcc").click((e) => {
+            open("page4_join.html");
+        });
+        $('#findId').click((e)=>{
+            open("page4_join_findpg.html", "popup", "width=500, height=700, top=200");
+        });
+
+        $("#close").click((e) => {
+            close();
+        })
+
+        function saveLog() {
+            const loginData = localStorage.setItem("LogIn");
+            loginData();
+        }
+
+        function LogIn() {
+            const findInfo = JSON.parse(localStorage.getItem("accData"));
+            let num = 0;
+            $(findInfo).each((index, elem) => {
+                if($(idInput).val() == elem.id){
+                    num += 1;
+                }
+                if(($(idInput).val() == elem.id) && ($(pwInput).val() == elem.password)){
+                    num += 1;
+                    return false;
+                }
+            });
+            if(num == 0) {
+                alert("ID가 잘못 되었습니다.");
+                return;
+            }
+            if(num == 1) {
+                alert("비밀번호가 잘못 입력되었습니다.");
+                return;
+            }
+            if(num == 2) {
+                const loginData = localStorage.setItem("LogIn", "login");
+                window.opener.document.getElementById("logout").innerText = "logout";
+                alert("환영합니다.");
+                window.close();
+            }
+        }
+    </script>
+</body>
+</html>

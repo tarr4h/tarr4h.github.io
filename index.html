@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <title>cube</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>   
+    <link rel="stylesheet" href="./css/indexStyle.css"></link>
+
+</head>
+<body>
+    <!-- header -->
+    <div id="header">
+        <span id="logout"></span>
+    </div>
+
+    <!-- container -->
+    <div id="cubeBox">
+        <div class="model">
+            <div id="og" class="cube">
+                <div id="front" class="cube_face front">
+                    <!-- <p>자기소개</p> -->
+                </div>
+                <div id="right" class="cube_face right">
+                    <!-- <p>로드맵</p> -->
+                </div>
+                <div id="back" class="cube_face back">
+                    <!-- <p>여행</p> -->
+                </div>
+                <div id="left" class="cube_face left">
+                   <!-- <p>회원가입</p> -->
+                </div>
+            </div>
+        </div>
+        <button type="button" id="btStop" onclick="stopLoc();">펼쳐보기</button>
+    </div>   
+    <!-- footer -->
+    <div id="footer">
+        <p>tarr4h, taewoo Han</p>
+    </div>
+    <script src="./js/IndexJs.js"></script>
+</body>
+</html>

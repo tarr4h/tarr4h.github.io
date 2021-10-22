@@ -1,0 +1,304 @@
+body {
+    background-color: black;
+    font-family: 'Roboto Mono', 'Noto Sans KR', monospace, sans-serif;
+    color: white;
+    margin-right: 0;
+}
+#header {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+footer {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* nav */
+#nav span {
+    margin-right: 50px;
+    font-size: 20px;
+    display: none;
+    border-bottom: 2px dotted white;
+    opacity: .8;
+}
+a, a:visited {
+    text-decoration: none;
+    color:white;
+}
+#btntop {
+    background-color: black;
+    color: white;
+    border-color: white;
+    border-top-color: black;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 20px;
+    width: 50px;
+    height: 30px;
+    opacity: .8;
+}
+
+#landMain:hover, #logout:hover {
+    cursor: pointer;
+}
+
+
+/* content */
+#container {
+    width: 100%;
+    /* border: 1px solid white; */
+}
+
+#containerHeader {
+    text-align: center;
+    margin-bottom: 50px;
+}
+#containerHeader h2 {
+    margin-top: 0;
+    font-size: 30px;
+}
+#boxs {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 900px;
+}
+
+#boxs th{
+    border-collapse: collapse;
+    border-radius: 10px;
+    width: 300px;
+    height: 150px;
+}
+
+#boxs td{
+    color: black;
+}
+
+#htmlgauge {
+    display: block;
+    margin: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    width: 201px;
+    height: 152px;
+    animation: htmlfillGauge;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+#javagauge {
+    display: block;
+    margin: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    width: 201px;
+    height: 152px;
+    animation: javafillGauge;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+#sqlgauge {
+    display: block;
+    margin: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    width: 201px;
+    height: 152px;
+    animation: sqlfillGauge;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+#cssgauge {
+    display: block;
+    margin: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    width: 201px;
+    height: 152px;
+    animation: cssfillGauge;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+#cssgauge {
+    display: block;
+    margin: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    width: 201px;
+    height: 152px;
+    animation: cssfillGauge;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+#jsgauge {
+    display: block;
+    margin: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    width: 201px;
+    height: 152px;
+    animation: jsfillGauge;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.infoText {
+    position: absolute;
+    transform: translate(-40px, -125px);
+}
+.infoText2 {
+    position: absolute;
+    transform: translate(-80px, -120px);
+}
+
+/* 언어 */
+#langhtml {
+    color:black;
+    font-size: 30px;
+}
+#langjava {
+    color: rgb(51, 35, 150);
+    font-size: 30px;
+}
+#langsql {
+    color: rgb(115, 66, 250);
+    font-size: 30px;
+}
+#langcss {
+    color: midnightblue;
+    font-size: 30px;
+}
+#langspring {
+    color: lightcoral;
+    font-size: 30px;
+}
+#langjs {
+    color: lightsalmon;
+    font-size: 30px;
+}
+
+/* 학습단계 */
+#bgn {
+    color:rgb(245, 191, 42);
+    font-size: 20px
+}
+#learn {
+    color: green;
+    font-size: 20px;
+}
+#familiar {
+    color:rebeccapurple;
+    font-size: 20px;
+}
+#idn {
+    color: white;
+    font-size: 20px;
+}
+
+
+#html {
+    background-color:lightsteelblue;
+}
+
+#java {
+    background-color:rgba(161, 161, 161, 0.801);
+    background-color: rgb(75, 74, 74);
+}
+
+#sql {
+    background-color: rgba(39, 70, 71, 0.829);
+}
+#css {
+    background-color: tan;
+}
+#spring {
+    background-color:rgb(0, 0, 78);
+}
+#javascript {
+    background-color: rgb(13, 65, 20);
+    background-color: rgba(31, 46, 33, 0.692);
+}
+
+@keyframes htmlfillGauge {
+    0%{
+        width: 0px;
+    }
+    20%{
+        width: 50px;
+    }
+    100%{
+        width: 201px;
+    }
+}
+@keyframes javafillGauge {
+    0%{
+        width: 0px;
+    }
+    20%{
+        width: 20px;
+    }
+    50%{
+        width: 40px;
+    }
+    100%{
+        width: 120px;
+    }
+}
+@keyframes sqlfillGauge {
+    0%{
+        width: 0px;
+    }
+    20%{
+        width: 10px;
+    }
+    50%{
+        width: 30px;
+    }
+    100%{
+        width: 60px;
+    }
+}
+@keyframes cssfillGauge {
+    0%{
+        width: 0px;
+    }
+    20%{
+        width: 50px;
+    }
+    50%{
+        width: 110px;
+    }
+    100%{
+        width: 240px;
+    }
+}
+@keyframes jsfillGauge {
+    0%{
+        width: 0px;
+    }
+    20%{
+        width: 35px;
+    }
+    50%{
+        width: 90px;
+    }
+    100%{
+        width: 210px;
+    }
+}
+
+
+

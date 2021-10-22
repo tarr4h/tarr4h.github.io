@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Find</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .box p {
+            /* margin-top: 50px; */
+            margin-bottom: 10px;
+        }
+        .ssn {
+            width: 80px;
+        }
+        #find {
+            margin-top: 20px;
+            width: 195px;
+            height: 30px;
+            background-color: black;
+            border: 1px solid white;
+            color: white;
+        }
+        #id {
+            width: 187px;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+        .container h2{
+            margin-bottom: 60px;
+        }
+        .container {
+            border: 1px solid white;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Find ID</h2>
+        <div class="box">
+            <p>주민번호를 입력하세요</p>
+            <input type="text" name="" class="ssn" id="ssn1">
+            <span> - </span>
+            <input type="password" name="" id="ssn2" class="ssn">
+        </div>
+        <button id="find" onclick="func()">조회하기</button>
+        <div class="result" id="resultId">
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Find Password</h2>
+        <div class="box">
+            <p>아이디를 입력하세요</p>
+            <input type="text" name="" id="id1">
+            <p>주민번호를 입력하세요</p>
+            <input type="text" name="" id="ssn3" class="ssn">
+            <span> - </span>
+            <input type="password" name="" id="ssn4" class="ssn">
+        </div>
+        <button id="find" onclick="funcFindPw()">조회하기</button>
+        <div class="result" id="resultPw">
+        </div>
+    </div>
+    
+    <script>
+        function func() {
+            $('#resultId').empty();
+            const findId = JSON.parse(localStorage.getItem("accData"));
+            let check = 0;
+            let id = null;
+            $(findId).each((index, elem) => {
+                if(($(ssn1).val() == elem.ssn1) && ($(ssn2).val() == elem.ssn2)){
+                    $('#resultId').append(`<span>ID는 <b>${elem.id}</b> 입니다.</span>`);
+                    check += 1;
+                    return false;
+                }
+            });
+            if(check != 1) $('#resultId').append("<span>해당 주민번호로 조회된 ID가 없습니다.</span>");
+            $(ssn1).val('');
+            $(ssn2).val('');lo
+        }
+        function funcFindPw() {
+            $('#resultPw').empty();
+            const findId = JSON.parse(localStorage.getItem("accData"));
+            let check = 0;
+            let id = null;
+            $(findId).each((index, elem) => {
+                if(($(ssn3).val() == elem.ssn1) && ($(ssn4).val() == elem.ssn2)){
+                    if($(id1).val() == elem.id){
+                        check += 1;
+                        $('#resultPw').append(`<span>password는 <b>${elem.password}</b> 입니다.</span>`);
+                        return false;
+                    }
+                }
+            });
+            if(check != 1) $('#resultPw').append("<span>해당 정보로 조회된 PW가 없습니다.</span>");
+            $(ssn3).val('');
+            $(ssn4).val('');
+            $('#id1').val('');
+        }
+    </script>
+</body>
+</html>

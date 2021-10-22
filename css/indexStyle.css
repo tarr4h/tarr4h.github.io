@@ -1,0 +1,203 @@
+/* 인덱스페이지 */
+body{
+    background : black;
+    color: white;
+    font-family: 'Roboto Mono', 'Noto Sans KR', monospace, sans-serif;
+}
+#header {
+    width: 100%;
+    height: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#container {
+    width: 100%;
+    height: 300px;
+} 
+#cubeBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    margin: 0;
+}
+#footer {
+    width: 100%;
+    min-height: 150px;
+    text-align: center;
+}
+.model {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 300px;
+    perspective: 1600px;
+}
+.cube {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+.cube_face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: none;
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.front {
+    transform: rotateY(0deg) translateZ(150px);
+    background-image: url('../images/introduce.jpg');
+}
+.back {
+    transform: rotateY(180deg)  translateZ(150px);
+    transition: all .6s linear;
+    background-image: url('../images/travel.jpg');
+}
+.left {
+    transform: rotateY(-90deg)  translateZ(150px);
+    transition: all .6s linear;
+    background-image: url('../images/join.jpg');
+}
+.right {
+    transform:rotateY(90deg)  translateZ(150px);
+    transition: all .6s linear;
+    background-image: url('../images/roadmap.jpg');
+}
+.moveBack {
+    transform: translateX(600px);
+}
+.moveRight {
+    transform: translateX(300px);
+}
+.moveLeft {
+    transform: translateX(900px);
+}
+#btStop {
+    width: 100px;
+    height: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: black;
+    color: white;
+    border: 1px solid rgba(100, 97, 97, 0.507);
+    transition: 1s ease;
+    border-radius: 15px;
+    border-radius: 15px;
+}
+#btStop:hover {
+    cursor: pointer;
+}
+
+.disappearBt {
+    background-color: white;
+    opacity: 0;
+}
+#logout {
+    float: right;
+    margin-right: 20px;
+    transform: translateY(-37px);
+    text-decoration: underline;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+
+@keyframes rotation {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,0);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,-360deg);
+    }
+}
+@keyframes move {
+    100% {
+        transform: translateX(-450px);
+    }
+}
+
+
+
+/* 미사용 css */
+/* 우측회전 */
+/*
+@keyframes r_rotation1 {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,0);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,-90deg);
+    }
+}
+@keyframes r_rotation2 {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,-90deg);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,-180deg);
+    }
+}
+@keyframes r_rotation3 {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,-180deg);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,-270deg);
+    }
+}
+@keyframes r_rotation4 {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,-270deg);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,-360deg);
+    }
+}
+*/
+    /* 좌측회전 */
+/*
+@keyframes l_rotation1 {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,0);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,90deg);
+    }
+}
+@keyframes l_rotation2 {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,90deg);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,180deg);
+    }
+}
+@keyframes l_rotation3 {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,180deg);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,270deg);
+    }
+}
+@keyframes l_rotation4 {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,1,0,270deg);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(0,1,0,360deg);
+    }
+} */
+
+
